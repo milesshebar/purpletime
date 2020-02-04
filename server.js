@@ -4,24 +4,35 @@
 // init project
 const express = require("express");
 const request = require("request");
+const tj = require("@tmcw/togeojson");
+const fs = require("fs");
+
+
+const options = {
+  method: 'GET',
+  uri: 'http://knox.ecolane.com/mde.php?q=vehicle_live'
+}
+const DOMParser = require("xmldom").DOMParser;
+
+request('http://knox.ecolane.com/mde.php?q=vehicle_live', { json: false }, (err, res, body) => {
+  if (err) { return console.log(err); }
+  console.log(body.url);
+  console.log(body.explanation);
+});
+
 
 const app = express();
 
-const tj = require("@tmcw/togeojson");
-const fs = require("fs");
 // node doesn't have xml parsing or a dom. use xmldom
-const DOMParser = require("xmldom").DOMParser;
 
-const kml = new DOMParser().parseFromString(request('http://www.google.com', function (error, response, body) {
-  console.error('error:', error); // Print the error if one occurred
-  console.log('statusCode:', response && response.statusCode); // Print the response status code if a response was received
-  console.log('body:', body); // Print the HTML for the Google homepage.
-});
-);
+
+
+const kml = new DOMParser().parseFromString();
 console.log(kml);
 const converted = tj.kml(kml);
 
 const convertedWithStyles = tj.kml(kml, { styles: true });
+
 
 // we've started you off with Express,
 // but feel free to use whatever libs or frameworks you'd like through `package.json`.

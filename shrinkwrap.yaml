@@ -3,6 +3,7 @@ dependencies:
   express: 4.17.1
   jquery: 3.4.1
   request: 2.88.0
+  xmldom: 0.2.1
 packages:
   /@tmcw/togeojson/3.2.0:
     dev: false
@@ -711,6 +712,12 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-OhBcoXBTr1XW4nDB+CiGguGNpAA=
+  /xmldom/0.2.1:
+    dev: false
+    engines:
+      node: '>=0.1'
+    resolution:
+      integrity: sha512-kXXiYvmblIgEemGeB75y97FyaZavx6SQhGppLw5TKWAD2Wd0KAly0g23eVLh17YcpxZpnFym1Qk/eaRjy1APPg==
 registry: 'https://registry.npmjs.org/'
 shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
@@ -719,3 +726,4 @@ specifiers:
   express: ^4.17.1
   jquery: ^3.4.1
   request: ^2.88.0
+  xmldom: ^0.2.1
