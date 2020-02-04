@@ -3,35 +3,36 @@
 
 // init project
 const express = require("express");
+var parseString = require('xml2js').parseString;
 const request = require("request");
 const tj = require("@tmcw/togeojson");
 const fs = require("fs");
+const DOMParser = require("xmldom").DOMParser;
+
 
 
 const options = {
   method: 'GET',
   uri: 'http://knox.ecolane.com/mde.php?q=vehicle_live'
 }
-const DOMParser = require("xmldom").DOMParser;
 
-request('http://knox.ecolane.com/mde.php?q=vehicle_live', { json: false }, (err, res, body) => {
+request(options, function(err, res, body) {
   if (err) { return console.log(err); }
-  console.log(body.url);
-  console.log(body.explanation);
+  var xml = body;   
+  
+  parseString(xml, function (err, result) {
+    console.dir(Coordinates);
+});
+
 });
 
 
 const app = express();
 
+
+
 // node doesn't have xml parsing or a dom. use xmldom
 
-
-
-const kml = new DOMParser().parseFromString();
-console.log(kml);
-const converted = tj.kml(kml);
-
-const convertedWithStyles = tj.kml(kml, { styles: true });
 
 
 // we've started you off with Express,
