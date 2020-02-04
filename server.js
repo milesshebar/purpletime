@@ -16,15 +16,16 @@ const options = {
   uri: 'http://knox.ecolane.com/mde.php?q=vehicle_live'
 }
 
-request(options, function(err, res, body) {
+var location = request(options, function(err, res, body) {
   if (err) { return console.log(err); }
-  var xml = body;   
-  
+  var xml = body;  
   parseString(xml, function (err, result) {
-    console.dir(Coordinates);
+        const json = JSON.stringify(result);
+    console.log(json.kml.Document.0.Placemark.);
 });
 
 });
+
 
 
 const app = express();
