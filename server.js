@@ -20,10 +20,10 @@ var location = request(options, function(err, res, body) {
   if (err) { return console.log(err); }
   var xml = body;  
   parseString(xml, function (err, result) {
-            console.log(result.kml.Document[0].Placemark[24].name[0]);
-            console.log(result.kml.Document[0].Placemark[24].Point[0].coordinates[0]);
+            console.log(result.kml.Document[0].Placemark[10].name[0]);
+            console.log(result.kml.Document[0].Placemark[10].Point[0].coordinates[0]);
 
-        return result.kml.Document[0].Placemark[24].Point[0].coordinates[0];
+        return result.kml.Document[0].Placemark[10].Point[0].coordinates[0];
     const json = JSON.stringify(result);
 });
 
