@@ -4,6 +4,7 @@ var parseString = require("xml2js").parseString;
 const request = require("request");
 const tj = require("@tmcw/togeojson");
 const fs = require("fs");
+const util = require('util')
 const DOMParser = require("xmldom").DOMParser;
 
 const options = {
@@ -17,11 +18,11 @@ var location = request(options, function(err, res, body) {
   }
   var xml = body;
   parseString(xml, function(err, result) {
-    
+    const json = JSON.stringify(result);
+    console.log(util.inspect(result, {showHidden: false, depth: null}))
     console.log(result.kml.Document[0].Placemark[10].name[0]);
     console.log(result.kml.Document[0].Placemark[10].Point[0].coordinates[0]);
     return result.kml.Document[0].Placemark[10].Point[0].coordinates[0];
-    const json = JSON.stringify(result);
   });
 });
 
