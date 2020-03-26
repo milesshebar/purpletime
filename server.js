@@ -12,27 +12,36 @@ const options = {
   uri: "http://knox.ecolane.com/mde.php?q=vehicle_live"
 };
 
-var location = request(options, function(err, res, body) {
+request(options, function(err, res, body) {
   if (err) {
     return console.log(err);
   }
-  var xml = body;
+  var kml = body;
   
-  parseString(xml, function(err, result) {
+  return kml;
+  /*parseString(kml, function(err, result) {
     console.log(result.kml.Document[0].Placemark[16].name[0]);
-    console.log(result.kml.Document[0].Placemark[5].Point[0].coordinates[0]);
+    console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
     const json = JSON.stringify(result);
     
     return result.kml.Document[0].Placemark[16].Point[0].coordinates[0];
-  });
+  });*/
 });
 
 const app = express();
+var http = require('http').createServer(app);
+var io = require('socket.io')(http);
+
+
 
 app.use(express.static("public"));
 
 app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
+});
+
+io.on('connection', function(socket){
+  console.log('a user connected');
 });
 
 const listener = app.listen(process.env.PORT, function() {
