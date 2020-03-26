@@ -1,69 +1,40 @@
-<!-- This is a static file -->
-<!-- served from your routes in server.js -->
-
-<!-- You might want to try something fancier: -->
-<!-- html/nunjucks docs: https://mozilla.github.io/nunjucks/ -->
-<!-- pug: https://pugjs.org/ -->
-<!-- haml: http://haml.info/ -->
-<!-- hbs(handlebars): http://handlebarsjs.com/ -->
-
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>Welcome to Glitch!</title>
-    <meta name="description" content="A cool thing made with Glitch">
-    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css">
-    
-    <!-- import the webpage's client-side javascript file -->
-    <script src="/client.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="./L.KML.js"></script>
   </head>
   <body>
-    <header>
-      <h1>
-        A Dream of the Future
-      </h1>
-    </header>
+    <div style="width: 100vw; height: 100vh" id="map"></div>
+    <script type="text/javascript">
+      // Make basemap
+      const map = new L.Map("map", {
+        center: new L.LatLng(58.4, 43.0),
+        zoom: 11
+      });
+      const osm = new L.TileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      );
 
-    <main>
-      <p class="bold">Oh hi,</p>
-      
-      <p>Tell me your hopes and dreams:</p>
-      
-      <form>
-        <input name="dream" type="text" maxlength="100" placeholder="Dreams!" aria-labelledby="submit-dream">
-        <button type="submit" id="submit-dream">Submit Dream</button>
-      </form>
-      
-      <section class="dreams">
-        <ul id="dreams"></ul>
-      </section>
-    </main>
+      map.addLayer(osm);
 
-    <footer>
-      Made with <a href="https://glitch.com">Glitch</a>!
-    </footer>
+      // Load kml file
+      fetch("https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Ftest.kml?v=1585242254619")
+        .then(res => res.text())
+        .then(kmltext => {
+          // Create new kml overlay
+          const parser = new DOMParser();
+          const kml = parser.parseFromString(kmltext, "text/xml");
+          const track = new L.KML(kml);
+          map.addLayer(track);
 
-    <!-- include the Glitch button to show what the webpage is about and
-          to make it easier for folks to view source and remix -->
-    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
-    <script src="https://button.glitch.me/button.js"></script>
-    <script type="module">
-  import { kml } from "https://unpkg.com/@tmcw/togeojson?module";
-
-  fetch("test/data/linestring.kml")
-    .then(function(response) {
-      return response.xml();
-    })
-    .then(function(xml) {
-      console.log(kml(xml));
-    });
-</script>
-
+          // Adjust map to show the kml
+          const bounds = track.getBounds();
+          map.fitBounds(bounds);
+        });
+    </script>
   </body>
 </html>
