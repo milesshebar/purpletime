@@ -9,6 +9,10 @@
   </head>
   <body>
     <div style="width: 100vw; height: 100vh" id="map"></div>
+    <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
     <script type="text/javascript">
       // Make basemap
       const map = new L.Map("map", {
@@ -22,7 +26,9 @@
       map.addLayer(osm);
 
       // Load kml file
-      fetch("https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Ftest.kml?v=1585242254619")
+      fetch(
+        "https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Ftest.kml?v=1585242254619"
+      )
         .then(res => res.text())
         .then(kmltext => {
           // Create new kml overlay
@@ -36,9 +42,5 @@
           map.fitBounds(bounds);
         });
     </script>
-    <script src="https://unpkg.com/"></script>
-<script>
-  var socket = io();
-</script>
   </body>
 </html>

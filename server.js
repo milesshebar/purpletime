@@ -12,7 +12,7 @@ const options = {
   uri: "http://knox.ecolane.com/mde.php?q=vehicle_live"
 };
 
-request(options, function(err, res, body) {
+var KATkml = request(options, function(err, res, body) {
   if (err) {
     return console.log(err);
   }
@@ -41,9 +41,11 @@ app.get("/", function(request, response) {
 });
 
 io.on('connection', function(socket){
-  console.log('a user connected');
+  console.log("user connected");
+  io.emit('KATkml');
 });
 
-const listener = app.listen(process.env.PORT, function() {
-  console.log("Your app is listening on port " + listener.address().port);
+http.listen(3000, function(){
+  console.log('listening on *:3100');
 });
+
