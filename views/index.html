@@ -29,26 +29,23 @@
       map.addLayer(osm);
 
       socket.on("kml", function() {
-          console.log(data);
-        
-        });
-      
-      // Load kml file
-      fetch(
-        "tmp.kml"
-      )
-        .then(res => res.text())
-        .then(kmltext => {
-          // Create new kml overlay
-          const parser = new DOMParser();
-          const kml = parser.parseFromString(kmltext, "text/xml");
-          const track = new L.KML(kml);
-          map.addLayer(track);
+        fetch("tmp.kml")
+          .then(res => res.text())
+          .then(kmltext => {
+            // Create new kml overlay
+            const parser = new DOMParser();
+            const kml = parser.parseFromString(kmltext, "text/xml");
+            const track = new L.KML(kml);
+            map.addLayer(track);
 
-          // Adjust map to show the kml
-          const bounds = track.getBounds();
-          map.fitBounds(bounds);
-        });
+            // Adjust map to show the kml
+            const bounds = track.getBounds();
+            map.fitBounds(bounds);
+          });
+      });
+      
+
+      // Load kml file
     </script>
   </body>
 </html>
