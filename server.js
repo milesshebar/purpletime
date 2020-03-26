@@ -18,13 +18,10 @@ var KATkml = request(options, function(err, res, body) {
   }
   var kml = body;
   
-  return kml;
-  /*parseString(kml, function(err, result) {
-    console.log(result);
+  parseString(kml, function(err, result) {
     console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
-    
-    return result;
-  });*/
+    return result.kml.Document[0];
+  });
 });
 
 const app = express();
@@ -52,6 +49,6 @@ function sendTime() {
 setInterval(sendTime, 20000);
 
 http.listen(3000, function(){
-  console.log('listening on *:3100');
+  console.log('listening on *:3000');
 });
 
