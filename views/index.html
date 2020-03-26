@@ -13,11 +13,7 @@
     <script>
       var socket = io();
       socket.on("connect", function() {
-        socket.send("hi");
-
-        socket.on("kml", function(kml) {
-          console.log("gotsomethin")
-        });
+        console.log("connection");
       });
     </script>
     <script type="text/javascript">
@@ -32,8 +28,20 @@
 
       map.addLayer(osm);
 
+      socket.on("kml", function(kml) {
+                  const parser = new DOMParser();
+          const text = parser.parseFromString(kml, "text/xml");
+
+        const track = new L.KML(kml);
+        map.addLayer(track);
+
+// Adjust map to show the kml
+          const bounds = track.getBounds();
+          map.fitBounds(bounds);
+        });
+      
       // Load kml file
-      fetch(
+     /* fetch(
         "https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Ftest.kml?v=1585242254619"
       )
         .then(res => res.text())
@@ -47,7 +55,7 @@
           // Adjust map to show the kml
           const bounds = track.getBounds();
           map.fitBounds(bounds);
-        });
+        });*/
     </script>
   </body>
 </html>

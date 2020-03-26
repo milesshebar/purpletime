@@ -18,7 +18,7 @@ var KATkml = request(options, function(err, res, body) {
   }
   var kml = body;
   
-  return kml;
+  return body;
   /*parseString(kml, function(err, result) {
     console.log(result.kml.Document[0].Placemark[16].name[0]);
     console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
