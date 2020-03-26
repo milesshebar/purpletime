@@ -16,24 +16,25 @@ const app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 
-var KATkml = request(options, function putTemp(err, res, body) {
-  if (err) {
-    return console.log(err);
-  }
-  var kml = body;
-  fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
-    // throws an error, you could also catch it here
-    if (err) throw err;
+function KATkml() {
+  request(options, function putTemp(err, res, body) {
+    if (err) {
+      throw err;
+    }
+    var kml = body;
+    fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
+      // throws an error, you could also catch it here
+      if (err) throw err;
+      io.emit("kml", { });
+      // success case, the file was saved
+      console.log("saved!");
+    });
+  })};
+setInterval(KATkml, 10000);
 
-    // success case, the file was saved
-    console.log("saved!");
-  });
-});
-
- setInterval(KATkml, 10000);
 
 io.on("connection", function(socket) {
-  socket.emit("kml", { kml: KATkml });
+  socket.emit("kml", { });
 });
 
 app.use(express.static("public"));
@@ -44,7 +45,7 @@ app.get("/", function(request, response) {
 
 // Send current time to all connected clients
 function sendTime() {
-  io.emit("kml", { kml: KATkml });
+  io.emit("kml", { });
   console.log("emitting");
 }
 
