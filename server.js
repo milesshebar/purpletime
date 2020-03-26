@@ -18,19 +18,22 @@ var KATkml = request(options, function(err, res, body) {
   }
   var kml = body;
   
-  //return body;
-  parseString(kml, function(err, result) {
+  return kml;
+  /*parseString(kml, function(err, result) {
     console.log(result);
     console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
     
-    return result.kml.Document[0];
-  });
+    return result;
+  });*/
 });
 
 const app = express();
 var http = require('http').createServer(app);
 var io = require('socket.io')(http);
 
+io.on('connection', function (socket) {
+  socket.emit('kml', { kml: KATkml });
+});
 
 
 app.use(express.static("public"));
