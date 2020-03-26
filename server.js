@@ -40,10 +40,14 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-io.on('connection', function(socket){
-  console.log("user connected");
-  io.emit('KATkml');
-});
+// Send current time to all connected clients
+function sendTime() {
+    io.emit('kml', { kml: KATkml });
+    console.log("emitting");
+}
+
+// Send current time every 10 secs
+setInterval(sendTime, 20000);
 
 http.listen(3000, function(){
   console.log('listening on *:3100');

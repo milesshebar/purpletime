@@ -12,6 +12,13 @@
     <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
+      socket.on("connect", function() {
+        socket.send("hi");
+
+        socket.on("kml", function(kml) {
+          console.log("gotsomethin")
+        });
+      });
     </script>
     <script type="text/javascript">
       // Make basemap
