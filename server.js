@@ -12,18 +12,20 @@ const options = {
   uri: "http://knox.ecolane.com/mde.php?q=vehicle_live",
 };
 
+
 var KATkml = request(options, function(err, res, body) {
   if (err) {
     return console.log(err);
   }
   var kml = body;
-  res.pipe(fs.createWriteStream(__dirname + '/public/tmp.kml'))
   parseString(kml, function(err, result) {
     
     console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
     return result.kml.Document[0];
   });
 });
+
+
 
 const app = express();
 var http = require('http').createServer(app);
