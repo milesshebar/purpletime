@@ -28,20 +28,12 @@
 
       map.addLayer(osm);
 
-      socket.on("kml", function(kml) {
-                  const parser = new DOMParser();
-          const text = parser.parseFromString(kml, "text/xml");
-
-        const track = new L.KML(kml);
-        map.addLayer(track);
-
-// Adjust map to show the kml
-          const bounds = track.getBounds();
-          map.fitBounds(bounds);
+      socket.on("kml", function(data) {
+          console.log(data)
         });
       
       // Load kml file
-     /* fetch(
+      fetch(
         "https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Ftest.kml?v=1585242254619"
       )
         .then(res => res.text())
@@ -55,7 +47,7 @@
           // Adjust map to show the kml
           const bounds = track.getBounds();
           map.fitBounds(bounds);
-        });*/
+        });
     </script>
   </body>
 </html>

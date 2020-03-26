@@ -18,14 +18,13 @@ var KATkml = request(options, function(err, res, body) {
   }
   var kml = body;
   
-  return body;
-  /*parseString(kml, function(err, result) {
-    console.log(result.kml.Document[0].Placemark[16].name[0]);
+  //return body;
+  parseString(kml, function(err, result) {
+    console.log(result);
     console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
-    const json = JSON.stringify(result);
     
-    return result.kml.Document[0].Placemark[16].Point[0].coordinates[0];
-  });*/
+    return result.kml.Document[0];
+  });
 });
 
 const app = express();
