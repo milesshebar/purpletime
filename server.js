@@ -9,7 +9,7 @@ const DOMParser = require("xmldom").DOMParser;
 
 const options = {
   method: "GET",
-  uri: "http://knox.ecolane.com/mde.php?q=vehicle_live",
+  uri: "https://knox.ecolane.com/mde.php?q=vehicle_live",
 };
 
 
@@ -18,6 +18,13 @@ var KATkml = request(options, function(err, res, body) {
     return console.log(err);
   }
   var kml = body;
+  fs.writeFile(__dirname + "/public/tmp.kml", kml, (err) => {
+    // throws an error, you could also catch it here
+    if (err) throw err;
+
+    // success case, the file was saved
+    console.log('saved!');
+});
   parseString(kml, function(err, result) {
     
     console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
