@@ -16,12 +16,12 @@ var KATkml = request(options, function(err, res, body) {
   if (err) {
     return console.log(err);
   }
-  var kml = body;
-  
+  return body;
+  /*var kml = body;
   parseString(kml, function(err, result) {
     console.log(result.kml.Document[0].Placemark[16].Point[0].coordinates[0]);
-    return result.kml.Document[0];
-  });
+    return result.kml;
+  });*/
 });
 
 const app = express();
