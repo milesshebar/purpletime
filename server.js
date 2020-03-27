@@ -43,15 +43,6 @@ app.get("/", function(request, response) {
   response.sendFile(__dirname + "/views/index.html");
 });
 
-// Send current time to all connected clients
-function sendTime() {
-  io.emit("kml", { });
-  console.log("emitting");
-}
-
-// Send current time every 10 secs
-setInterval(sendTime, 10000);
-
 http.listen(3000, function() {
   console.log("listening on *:3000");
 });

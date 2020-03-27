@@ -32,15 +32,14 @@
 
       
       socket.on("kml", function() {
-        var track = {};
-        map.removeLayer(track);
+        markerGroup.clearLayers();
         fetch("tmp.kml")
           .then(res => res.text())
           .then(kmltext => {
             // Create new kml overlay
             const parser = new DOMParser();
             const kml = parser.parseFromString(kmltext, "text/xml");
-            track = new L.KML(kml);
+            var track = new L.KML(kml);
             track.addTo(markerGroup);
             // Adjust map to show the kml
             const bounds = track.getBounds();
