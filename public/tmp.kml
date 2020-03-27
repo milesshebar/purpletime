@@ -873,21 +873,21 @@
 		
 	              </description></Placemark>
 	          <Placemark>
-	             <styleUrl>#live_gps</styleUrl>
+	             <styleUrl>#live_arrival</styleUrl>
 	             <name>124 (MTV-Gamb Evening)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.46972,40.391585</coordinates>
+	               <coordinates>-82.441076,40.40405400000001</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: MTV-Gamb Evening
-		Time: 21:01:42
-		Event: Gps
-		Speed: 13.4 mph
-		Direction: 4.1 degrees from north
+		Time: 21:12:25
+		Event: Stop arrival
+		Speed: 0.7 mph
+		Direction: 270.6 degrees from north
 		Accuracy: 0 feet
-		Odometer: 129403.2
+		Odometer: 129406
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -913,17 +913,17 @@
 	             <name>126 (1 City Shttl PM)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.486833,40.386871</coordinates>
+	               <coordinates>-82.48698099999999,40.386862</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: 1 City Shttl PM
-		Time: 21:01:57
+		Time: 21:12:57
 		Event: Gps
 		Speed: 0.2 mph
-		Direction: 276.6 degrees from north
+		Direction: 126.4 degrees from north
 		Accuracy: 0 feet
-		Odometer: 65898.3
+		Odometer: 65898.5
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -1093,12 +1093,12 @@
 	             <name>135 ()</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.486697,40.386511</coordinates>
+	               <coordinates>-82.48669499999998,40.386511</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: 
-		Time: 21:02:01
+		Time: 21:12:41
 		Event: Gps
 		Speed: 0 mph
 		Direction: 270 degrees from north
