@@ -1,8 +1,6 @@
 const express = require("express");
 const request = require("request");
 const fs = require("fs");
-const util = require("util");
-const DOMParser = require("xmldom").DOMParser;
 
 const options = {
   method: "GET",

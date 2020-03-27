@@ -913,17 +913,17 @@
 	             <name>126 (1 City Shttl PM)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.486832,40.386911</coordinates>
+	               <coordinates>-82.486865,40.38693</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: 1 City Shttl PM
-		Time: 23:19:43
+		Time: 23:31:25
 		Event: Gps
-		Speed: 0.2 mph
-		Direction: 331.9 degrees from north
+		Speed: 0.7 mph
+		Direction: 350 degrees from north
 		Accuracy: 0 feet
-		Odometer: 65899.3
+		Odometer: 65899.5
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -1093,15 +1093,15 @@
 	             <name>135 ()</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.486689,40.386511</coordinates>
+	               <coordinates>-82.48668800000002,40.386511</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: 
-		Time: 23:19:51
+		Time: 23:31:53
 		Event: Gps
 		Speed: 0 mph
-		Direction: 0 degrees from north
+		Direction: 142.6 degrees from north
 		Accuracy: 0 feet
 		Odometer: 69406.2
 		

@@ -12,11 +12,6 @@
     <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
-      socket.on("connect", function() {
-        console.log("connection");
-      });
-    </script>
-    <script type="text/javascript">
       const map = new L.Map("map", {
         center: new L.LatLng(58.4, 43.0),
         zoom: 11
