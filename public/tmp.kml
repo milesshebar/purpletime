@@ -841,17 +841,17 @@
 	             <name>126 (1 City Shttl PM)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.487054,40.386925</coordinates>
+	               <coordinates>-82.486921,40.387029</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: 1 City Shttl PM
-		Time: 00:31:07
+		Time: 03:00:15
 		Event: Gps
-		Speed: 0.4 mph
-		Direction: 18.5 degrees from north
+		Speed: 0.2 mph
+		Direction: 123.3 degrees from north
 		Accuracy: 0 feet
-		Odometer: 65900.1
+		Odometer: 65901.3
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -859,15 +859,15 @@
 	             <name>135 ()</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.486687,40.386512</coordinates>
+	               <coordinates>-82.48669,40.386512</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: 
-		Time: 00:31:17
+		Time: 03:00:29
 		Event: Gps
 		Speed: 0 mph
-		Direction: 37.4 degrees from north
+		Direction: 270 degrees from north
 		Accuracy: 0 feet
 		Odometer: 69406.2
 		
