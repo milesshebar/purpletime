@@ -19,12 +19,10 @@ function KATkml() {
     if (err) {
       throw err;
     }
-    var kml = body;
-    fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
-      // throws an error, you could also catch it here
+      var kml = body;
+      fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
       if (err) throw err;
       io.emit("kml", {});
-      // success case, the file was saved
       console.log("saved!");
     });
   });
