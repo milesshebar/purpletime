@@ -913,15 +913,15 @@
 	             <name>126 (1 City Shttl PM)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.486865,40.386873</coordinates>
+	               <coordinates>-82.486587,40.38689</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: 1 City Shttl PM
-		Time: 22:26:01
+		Time: 22:38:21
 		Event: Gps
-		Speed: 0.2 mph
-		Direction: 297.7 degrees from north
+		Speed: 0.4 mph
+		Direction: 245.5 degrees from north
 		Accuracy: 0 feet
 		Odometer: 65898.8
 		
@@ -1098,10 +1098,10 @@
 	              <description>
 	                   
 		Run: 
-		Time: 22:26:27
+		Time: 22:37:49
 		Event: Gps
 		Speed: 0 mph
-		Direction: 159.1 degrees from north
+		Direction: 131.1 degrees from north
 		Accuracy: 0 feet
 		Odometer: 69406.2
 		

@@ -1,6 +1,4 @@
-// init project
 const express = require("express");
-var parseString = require("xml2js").parseString;
 const request = require("request");
 const tj = require("@tmcw/togeojson");
 const fs = require("fs");
@@ -25,16 +23,17 @@ function KATkml() {
     fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
       // throws an error, you could also catch it here
       if (err) throw err;
-      io.emit("kml", { });
+      io.emit("kml", {});
       // success case, the file was saved
       console.log("saved!");
     });
-  })};
+  });
+}
+
 setInterval(KATkml, 10000);
 
-
 io.on("connection", function(socket) {
-  socket.emit("kml", { });
+  socket.emit("kml", {});
 });
 
 app.use(express.static("public"));

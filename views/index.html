@@ -2,13 +2,13 @@
   <head>
     <link
       rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     />
-    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="./L.KML.js"></script>
   </head>
   <body>
-    <div style="width: 100%; height: 100%" id="map"></div>
+    <div style="width: 100%; height: 50%" id="map"></div>
     <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
@@ -17,7 +17,6 @@
       });
     </script>
     <script type="text/javascript">
-      // Make basemap
       const map = new L.Map("map", {
         center: new L.LatLng(58.4, 43.0),
         zoom: 11
@@ -30,25 +29,19 @@
 
       var markerGroup = L.layerGroup().addTo(map);
 
-      
       socket.on("kml", function() {
         markerGroup.clearLayers();
         fetch("tmp.kml")
           .then(res => res.text())
           .then(kmltext => {
-            // Create new kml overlay
             const parser = new DOMParser();
             const kml = parser.parseFromString(kmltext, "text/xml");
             var track = new L.KML(kml);
             track.addTo(markerGroup);
-            // Adjust map to show the kml
             const bounds = track.getBounds();
             map.fitBounds(bounds);
           });
       });
-      
-
-      // Load kml file
     </script>
   </body>
 </html>
