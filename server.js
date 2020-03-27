@@ -1,13 +1,12 @@
 const express = require("express");
 const request = require("request");
-const tj = require("@tmcw/togeojson");
 const fs = require("fs");
 const util = require("util");
 const DOMParser = require("xmldom").DOMParser;
 
 const options = {
   method: "GET",
-  uri: "https://knox.ecolane.com/mde.php?q=vehicle_live"
+  uri: process.env.SECRET
 };
 
 const app = express();
@@ -16,14 +15,10 @@ var io = require("socket.io")(http);
 
 function KATkml() {
   request(options, function putTemp(err, res, body) {
-    if (err) {
-      throw err;
-    }
-      var kml = body;
-      fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
-      if (err) throw err;
-      io.emit("kml", {});
-      console.log("saved!");
+    if (err) throw err;
+    var kml = body;
+    fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
+    io.emit("kml", {});
     });
   });
 }
