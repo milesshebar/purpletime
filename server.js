@@ -4,7 +4,7 @@ const fs = require("fs");
 
 const options = {
   method: "GET",
-  uri: process.env.SECRET
+  uri: process.env.KAT_FEED
 };
 
 const app = express();

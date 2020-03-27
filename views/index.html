@@ -13,17 +13,14 @@
     <script>
       var socket = io();
       const map = new L.Map("map", {
-        center: new L.LatLng(58.4, 43.0),
-        zoom: 11
+        center: new L.LatLng(40.3834, -82.4457),
+        zoom: 14
       });
-      
       const osm = new L.TileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       );
-
       map.addLayer(osm);
       var markerGroup = L.layerGroup().addTo(map);
-
       socket.on("kml", function() {
         markerGroup.clearLayers();
         fetch("tmp.kml")
