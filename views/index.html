@@ -28,10 +28,12 @@
 
       map.addLayer(osm);
 
+      var markerGroup = L.layerGroup().addTo(map);
+
+      
       socket.on("kml", function() {
         var track = {};
-                    map.removeLayer(track);
-
+        map.removeLayer(track);
         fetch("tmp.kml")
           .then(res => res.text())
           .then(kmltext => {
@@ -39,7 +41,7 @@
             const parser = new DOMParser();
             const kml = parser.parseFromString(kmltext, "text/xml");
             track = new L.KML(kml);
-            map.addLayer(track);
+            track.addTo(markerGroup);
             // Adjust map to show the kml
             const bounds = track.getBounds();
             map.fitBounds(bounds);
