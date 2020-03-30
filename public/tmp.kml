@@ -846,7 +846,7 @@
 	              <description>
 	                   
 		Run: 
-		Time: 20:16:05
+		Time: 20:27:05
 		Event: Gps
 		Speed: 0 mph
 		Direction: 0 degrees from north
@@ -859,15 +859,15 @@
 	             <name>139 (Village AM)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.48671100000001,40.386859</coordinates>
+	               <coordinates>-82.486712,40.386861</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: Village AM
-		Time: 20:16:25
+		Time: 20:27:25
 		Event: Gps
 		Speed: 0 mph
-		Direction: 312.5 degrees from north
+		Direction: 56.8 degrees from north
 		Accuracy: 0 feet
 		Odometer: 56108.6
 		
