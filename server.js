@@ -16,7 +16,7 @@ function KATkml() {
   request(options, function putTemp(err, res, body) {
     if (err) throw err;
     var kml = body;
-    filterxml(xmlIn, ['book'], {}, function (err, xmlOut) {
+    filterxml(body, ['description'], {}, function (err, xmlOut) {
       if (err) { throw err; }
       console.log(xmlOut)
     });

@@ -877,17 +877,17 @@
 	             <name>121 (shift leader 3)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.45685999999999,40.402314</coordinates>
+	               <coordinates>-82.459499,40.399344</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: shift leader 3
-		Time: 17:27:38
+		Time: 17:39:58
 		Event: Gps
-		Speed: 16.3 mph
-		Direction: 178.4 degrees from north
+		Speed: 6.3 mph
+		Direction: 248.4 degrees from north
 		Accuracy: 0 feet
-		Odometer: 53177207.2
+		Odometer: 53177209.4
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -895,17 +895,17 @@
 	             <name>124 (MTV-Gamb Evening)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.399795,40.384985</coordinates>
+	               <coordinates>-82.391754,40.36909399999999</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: MTV-Gamb Evening
-		Time: 17:27:37
+		Time: 17:39:41
 		Event: Gps
-		Speed: 36 mph
-		Direction: 152.4 degrees from north
+		Speed: 7.2 mph
+		Direction: 212.6 degrees from north
 		Accuracy: 0 feet
-		Odometer: 131987.4
+		Odometer: 131989.9
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -1111,17 +1111,17 @@
 	             <name>141 (PM 4)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.42252100000002,40.41142899999999</coordinates>
+	               <coordinates>-82.350838,40.435294000000006</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: PM 4
-		Time: 17:27:38
+		Time: 17:39:48
 		Event: Gps
-		Speed: 51 mph
-		Direction: 71.8 degrees from north
+		Speed: 0 mph
+		Direction: 0 degrees from north
 		Accuracy: 0 feet
-		Odometer: 16570.5
+		Odometer: 16576.3
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -1129,17 +1129,17 @@
 	             <name>142 (MID DAY 1)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.48242200000001,40.393395</coordinates>
+	               <coordinates>-82.335959,40.408795</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: MID DAY 1
-		Time: 17:27:44
+		Time: 17:40:04
 		Event: Gps
-		Speed: 29.1 mph
-		Direction: 93 degrees from north
+		Speed: 37.8 mph
+		Direction: 95.5 degrees from north
 		Accuracy: 0 feet
-		Odometer: 10553.6
+		Odometer: 10561.8
 		
 	              </description></Placemark>
 	          <Placemark>
