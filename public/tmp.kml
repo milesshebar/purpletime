@@ -873,39 +873,21 @@
 		
 	              </description></Placemark>
 	          <Placemark>
-	             <styleUrl>#live_gps</styleUrl>
+	             <styleUrl>#live_departure</styleUrl>
 	             <name>121 (shift leader 3)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.47394799999998,40.39547900000001</coordinates>
+	               <coordinates>-82.459903,40.400115</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: shift leader 3
-		Time: 18:03:08
-		Event: Gps
-		Speed: 29.3 mph
-		Direction: 71.9 degrees from north
+		Time: 18:07:20
+		Event: Stop departure
+		Speed: 11.4 mph
+		Direction: 182 degrees from north
 		Accuracy: 0 feet
-		Odometer: 53177211.4
-		
-	              </description></Placemark>
-	          <Placemark>
-	             <styleUrl>#live_routeaccept</styleUrl>
-	             <name>121 (shift leader 3)</name>
-	             <visibility>1</visibility>
-	             <Point>
-	               <coordinates>-82.47394799999998,40.39547900000001</coordinates>
-	             </Point>
-	              <description>
-	                   
-		Run: shift leader 3
-		Time: 18:03:08
-		Event: Cluster accept
-		Speed: 29.3 mph
-		Direction: 71.9 degrees from north
-		Accuracy: 0 feet
-		Odometer: 53177211.4
+		Odometer: 53177212.5
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -913,17 +895,17 @@
 	             <name>124 (MTV-Gamb Evening)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.48499299999999,40.389792</coordinates>
+	               <coordinates>-82.48039,40.393368</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: MTV-Gamb Evening
-		Time: 18:02:53
+		Time: 18:08:03
 		Event: Gps
-		Speed: 0.2 mph
-		Direction: 104.3 degrees from north
+		Speed: 28.6 mph
+		Direction: 92.5 degrees from north
 		Accuracy: 0 feet
-		Odometer: 131996.4
+		Odometer: 131996.9
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -1071,24 +1053,6 @@
 		
 	              </description></Placemark>
 	          <Placemark>
-	             <styleUrl>#live_gps</styleUrl>
-	             <name>137 (Village PM)</name>
-	             <visibility>1</visibility>
-	             <Point>
-	               <coordinates>-82.48645000000002,40.387009</coordinates>
-	             </Point>
-	              <description>
-	                   
-		Run: Village PM
-		Time: 17:15:37
-		Event: Gps
-		Speed: 7.8 mph
-		Direction: 225.4 degrees from north
-		Accuracy: 0 feet
-		Odometer: 63637.8
-		
-	              </description></Placemark>
-	          <Placemark>
 	             <styleUrl>#live_pullin</styleUrl>
 	             <name>137 (Village PM)</name>
 	             <visibility>1</visibility>
@@ -1100,6 +1064,24 @@
 		Run: Village PM
 		Time: 17:15:37
 		Event: Pull In
+		Speed: 7.8 mph
+		Direction: 225.4 degrees from north
+		Accuracy: 0 feet
+		Odometer: 63637.8
+		
+	              </description></Placemark>
+	          <Placemark>
+	             <styleUrl>#live_gps</styleUrl>
+	             <name>137 (Village PM)</name>
+	             <visibility>1</visibility>
+	             <Point>
+	               <coordinates>-82.48645000000002,40.387009</coordinates>
+	             </Point>
+	              <description>
+	                   
+		Run: Village PM
+		Time: 17:15:37
+		Event: Gps
 		Speed: 7.8 mph
 		Direction: 225.4 degrees from north
 		Accuracy: 0 feet
@@ -1129,35 +1111,17 @@
 	             <name>141 (PM 4)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.440945,40.404081</coordinates>
+	               <coordinates>-82.450075,40.401593</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: PM 4
-		Time: 18:03:08
+		Time: 18:07:58
 		Event: Gps
-		Speed: 0.2 mph
-		Direction: 172.5 degrees from north
+		Speed: 30.4 mph
+		Direction: 240.8 degrees from north
 		Accuracy: 0 feet
-		Odometer: 16583.5
-		
-	              </description></Placemark>
-	          <Placemark>
-	             <styleUrl>#live_routeaccept</styleUrl>
-	             <name>141 (PM 4)</name>
-	             <visibility>1</visibility>
-	             <Point>
-	               <coordinates>-82.440945,40.404081</coordinates>
-	             </Point>
-	              <description>
-	                   
-		Run: PM 4
-		Time: 18:03:08
-		Event: Cluster accept
-		Speed: 0.2 mph
-		Direction: 172.5 degrees from north
-		Accuracy: 0 feet
-		Odometer: 16583.5
+		Odometer: 16584
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -1165,17 +1129,17 @@
 	             <name>142 (MID DAY 1)</name>
 	             <visibility>1</visibility>
 	             <Point>
-	               <coordinates>-82.38423799999998,40.413191</coordinates>
+	               <coordinates>-82.440458,40.403514</coordinates>
 	             </Point>
 	              <description>
 	                   
 		Run: MID DAY 1
-		Time: 18:03:12
+		Time: 18:08:12
 		Event: Gps
-		Speed: 46.8 mph
-		Direction: 287.2 degrees from north
+		Speed: 8.3 mph
+		Direction: 23.1 degrees from north
 		Accuracy: 0 feet
-		Odometer: 10572.8
+		Odometer: 10576
 		
 	              </description></Placemark>
 	          <Placemark>
@@ -1197,24 +1161,6 @@
 		
 	              </description></Placemark>
 	          <Placemark>
-	             <styleUrl>#live_gps</styleUrl>
-	             <name>144 (2 City Shttl Ln)</name>
-	             <visibility>1</visibility>
-	             <Point>
-	               <coordinates>-82.48647300000002,40.386997</coordinates>
-	             </Point>
-	              <description>
-	                   
-		Run: 2 City Shttl Ln
-		Time: 13:06:45
-		Event: Gps
-		Speed: 0 mph
-		Direction: 284.7 degrees from north
-		Accuracy: 0 feet
-		Odometer: 26151.2
-		
-	              </description></Placemark>
-	          <Placemark>
 	             <styleUrl>#live_pullin</styleUrl>
 	             <name>144 (2 City Shttl Ln)</name>
 	             <visibility>1</visibility>
@@ -1226,6 +1172,24 @@
 		Run: 2 City Shttl Ln
 		Time: 13:06:45
 		Event: Pull In
+		Speed: 0 mph
+		Direction: 284.7 degrees from north
+		Accuracy: 0 feet
+		Odometer: 26151.2
+		
+	              </description></Placemark>
+	          <Placemark>
+	             <styleUrl>#live_gps</styleUrl>
+	             <name>144 (2 City Shttl Ln)</name>
+	             <visibility>1</visibility>
+	             <Point>
+	               <coordinates>-82.48647300000002,40.386997</coordinates>
+	             </Point>
+	              <description>
+	                   
+		Run: 2 City Shttl Ln
+		Time: 13:06:45
+		Event: Gps
 		Speed: 0 mph
 		Direction: 284.7 degrees from north
 		Accuracy: 0 feet
