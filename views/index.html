@@ -21,6 +21,15 @@
       );
       map.addLayer(osm);
       var markerGroup = L.layerGroup().addTo(map);
+      var polylinePoints = [
+        [37.781814, -122.404740],
+        [37.781719, -122.404637],
+        [37.781489, -122.404949],
+        [37.780704, -122.403945],
+        [37.780012, -122.404827]
+      ];            
+      
+      var polyline = L.polyline(polylinePoints).addTo(map);
       socket.on("kml", function() {
         markerGroup.clearLayers();
         fetch("tmp.kml")
