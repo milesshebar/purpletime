@@ -16,7 +16,7 @@ function KATkml() {
     if (err) throw err;
     var kml = body;
     fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
-    io.emit("kml", {});
+      io.emit("kml", {});
     });
   });
 }
