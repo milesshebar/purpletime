@@ -22,19 +22,10 @@ var io = require("socket.io")(http);
 function KATkml() {
   request(options, function putTemp(err, res, body) {
     if (err) throw err;
-    
-    var locations = res;
-    
-    filterxml(xmlIn, patterns, namespaces, function (err, xmlOut) {
-      if (err) { throw err; }
-      fs.writeFileSync('./norway-simplified.kml', xmlOut);
-    });
-    
     var kml = body;
+
+    console.log(kml);
     
-    
-    
-    console.log(typeof res);
     fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
       io.emit("kml", {});
     });
