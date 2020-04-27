@@ -16,20 +16,35 @@
         center: new L.LatLng(40.3834, -82.4457),
         zoom: 14
       });
+      var polylinePoints = [
+        [-82.4845,40.39012],
+        [-82.4845,40.39019],
+        [-82.48449,40.39026],
+        [-82.39852,40.36934],
+        [-82.39852,40.36934]
+      ];            
+      
+      var polyline = L.polyline(polylinePoints).addTo(map);
       const osm = new L.TileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       );
       map.addLayer(osm);
       var markerGroup = L.layerGroup().addTo(map);
-      var polylinePoints = [
-        [37.781814, -122.404740],
-        [37.781719, -122.404637],
-        [37.781489, -122.404949],
-        [37.780704, -122.403945],
-        [37.780012, -122.404827]
-      ];            
       
-      var polyline = L.polyline(polylinePoints).addTo(map);
+      fetch('https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Froutes.kml?v=1588020030915')
+      .then( res => res.text() )
+      .then( kmltext => {
+
+            // Create new kml overlay
+            parser = new DOMParser();
+            kml = parser.parseFromString(kmltext,"text/xml");
+
+            console.log(kml)
+
+            const track = new L.KML(kml)
+            map.addLayer(track)
+      })
+      
       socket.on("kml", function() {
         markerGroup.clearLayers();
         fetch("tmp.kml")
@@ -43,6 +58,8 @@
             map.fitBounds(bounds);
           });
       });
+      
+      
     </script>
   </body>
 </html>
