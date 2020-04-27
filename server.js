@@ -21,14 +21,19 @@ function KATkml() {
     parseString(xml,function(err, result) {
       var jsoniem = JSON.stringify(result);
       result.kml.Document[0].Placemark.forEach(function (el) {
-        if (el.name == '124 (MTV-Gamb Evening)' || el.name == '143 (MTV-Gamb Day)') {
+        if (el.name == '124 (MTV-Gamb Evening)') {
           var data = el.Point[0].coordinates[0];
-          io.emit("shuttle", data);
-        }      
+          var split = data.split(",");
+          io.emit("shuttle", split);
+        } 
+        if (el.name == '143 (MTV-Gamb Day)') {
+          var data = el.Point[0].coordinates[0];
+          var split = data.split(",");
+          io.emit("am", split);
+        } 
       });
     });
   })};
-
 
 /*function KATkml() {
   request(options, function putTemp(err, res, body) {
