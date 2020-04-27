@@ -32,9 +32,13 @@
       map.addLayer(osm);
       var markerGroup = L.layerGroup().addTo(map);
 
+      socket.on("shuttle", data => {
+        console.log(data);
+        var marker = L.marker([data]).addTo(markerGroup);
+      });
       
       
-      socket.on("kml", function() {
+      /*socket.on("kml", function() {
         markerGroup.clearLayers();
         fetch("tmp.kml")
           .then(res => res.text())
@@ -46,7 +50,7 @@
             const bounds = track.getBounds();
             map.fitBounds(bounds);
           });
-      });
+      });*/
       
       /*fetch('https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Froutes.kml?v=1588020030915')
       .then( res => res.text() )
