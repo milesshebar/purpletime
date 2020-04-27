@@ -8,6 +8,13 @@ const options = {
   uri: process.env.KAT_FEED
 };
 
+var patterns = ['x:Style'];
+var namespaces = {
+  'x': 'http://www.opengis.net/kml/2.2',
+};
+
+
+
 const app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
@@ -15,11 +22,19 @@ var io = require("socket.io")(http);
 function KATkml() {
   request(options, function putTemp(err, res, body) {
     if (err) throw err;
-    var kml = body;
-    filterxml(body, ['description'], {}, function (err, xmlOut) {
+    
+    var locations = res;
+    
+    filterxml(xmlIn, patterns, namespaces, function (err, xmlOut) {
       if (err) { throw err; }
-      console.log(xmlOut)
+      fs.writeFileSync('./norway-simplified.kml', xmlOut);
     });
+    
+    var kml = body;
+    
+    
+    
+    console.log(typeof res);
     fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
       io.emit("kml", {});
     });
