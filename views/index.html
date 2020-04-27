@@ -18,12 +18,12 @@
       });
      
       map.dragging.disable();
-map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable();
-map.boxZoom.disable();
-map.keyboard.disable();
-if (map.tap) map.tap.disable();
+      map.touchZoom.disable();
+      map.doubleClickZoom.disable();
+      map.scrollWheelZoom.disable();
+      map.boxZoom.disable();
+      map.keyboard.disable();
+      if (map.tap) map.tap.disable();
 
       
       const osm = new L.TileLayer(
@@ -31,7 +31,7 @@ if (map.tap) map.tap.disable();
       );
       map.addLayer(osm);
       var markerGroup = L.layerGroup().addTo(map);
-      
+
       
       
       socket.on("kml", function() {

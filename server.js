@@ -1,18 +1,11 @@
 const express = require("express");
 const request = require("request");
 const fs = require("fs");
-const filterxml = require("filterxml");
 
 const options = {
   method: "GET",
   uri: process.env.KAT_FEED
 };
-
-var patterns = ['x:Style'];
-var namespaces = {
-  'x': 'http://www.opengis.net/kml/2.2',
-};
-
 
 
 const app = express();
