@@ -1,6 +1,7 @@
 const express = require("express");
 const request = require("request");
 const fs = require("fs");
+const filterxml = require("filterxml");
 
 const options = {
   method: "GET",
@@ -15,6 +16,10 @@ function KATkml() {
   request(options, function putTemp(err, res, body) {
     if (err) throw err;
     var kml = body;
+    filterxml(xmlIn, ['book'], {}, function (err, xmlOut) {
+      if (err) { throw err; }
+      console.log(xmlOut)
+    });
     fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
       io.emit("kml", {});
     });
