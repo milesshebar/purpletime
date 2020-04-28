@@ -12,9 +12,14 @@
     <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
+      var bounds = new L.latLngBounds(new L.LatLng(40.414204, -82.508745), new L.LatLng(40.342613, -82.371132));
       const map = new L.Map("map", {
         center: new L.LatLng(40.3834, -82.4457),
-        zoom: 14
+        zoom: 14,
+   			maxBounds: bounds,
+  			maxBoundsViscosity: 0.75
+        
+
       });
      
     /*  map.dragging.disable();
