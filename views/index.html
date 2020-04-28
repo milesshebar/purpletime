@@ -32,7 +32,14 @@
       map.addLayer(osm);
       var markerGroup = L.layerGroup().addTo(map);
 
+      function onLocationFound(e) {
+
+          var marker = L.marker([e.latlng.lat,e.latlng.lng]).update(marker);
+          alert ('New latitude is ' + e.latlng.lat)
+      }
+      
       socket.on("shuttle", data => {
+        markerGroup.clearLayers();
         console.log(data);
         var mark = L.marker(
           L.latLng(
