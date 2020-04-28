@@ -19,7 +19,8 @@
     "xml-js": "^1.6.11",
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
-    "filterxml": "^1.1.4"
+    "filterxml": "^1.1.4",
+    "moment": "^2.24.0"
   },
   "engines": {
     "node": "10.x"
