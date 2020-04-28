@@ -27,16 +27,19 @@ function KATkml() {
     parseString(xml,function(err, result) {
       var jsoniem = JSON.stringify(result);
       result.kml.Document[0].Placemark.forEach(function (el) {
-        if (moment().isBefore(moment({ hour:20, minute: 0 }))) {
-            console.log("")
+        if (moment().isAfter(moment({ hour:20, minute: 0 }))) {
+            if ( el.name == '124 (MTV-Gamb Evening)') {
+              var data = el.Point[0].coordinates[0];
+              var split = data.split(",");
+              loc = split;
+              io.emit("shuttle", split);
+            }       
         }
 
-        if ( el.name == '124 (MTV-Gamb Evening)' ||  el.name == '143 (MTV-Gamb Day)') {
+        else if ( el.name == '143 (MTV-Gamb Day)') {
           var data = el.Point[0].coordinates[0];
           var split = data.split(",");
           loc = split;
-          console.log(split[1]);
-          console.log(split[0]);
           io.emit("shuttle", split);
         }      
       });

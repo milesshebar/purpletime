@@ -3,6 +3,7 @@ dependencies:
   express: 4.17.1
   filterxml: 1.1.4
   jquery: 3.4.1
+  leaflet.marker.slideto: 0.2.0
   moment: 2.24.0
   request: 2.88.2
   socket.io: 2.3.0
@@ -564,6 +565,10 @@ packages:
       '0': node >=0.6.0
     resolution:
       integrity: sha1-MT5mvB5cwG5Di8G3SZwuXFastqI=
+  /leaflet.marker.slideto/0.2.0:
+    dev: false
+    resolution:
+      integrity: sha1-AZGnE0yFq1fR3Y7+/JCrvlKYiOk=
   /media-typer/0.3.0:
     dev: false
     engines:
@@ -1035,6 +1040,7 @@ specifiers:
   express: ^4.17.1
   filterxml: ^1.1.4
   jquery: ^3.4.1
+  leaflet.marker.slideto: ^0.2.0
   moment: ^2.24.0
   request: ^2.88.2
   socket.io: ^2.3.0

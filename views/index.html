@@ -5,6 +5,7 @@
       href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     />
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.marker.slideto@0.2.0/Leaflet.Marker.SlideTo.js"></script>
     <script src="./L.KML.js"></script>
   </head>
   <body>
@@ -55,7 +56,11 @@
         var lat = parseFloat(data[1]);
         var lng = parseFloat(data[0]);
         var newLatLng = new L.LatLng(lat, lng);
-        mark.setLatLng(newLatLng); 
+        mark.slideTo(	newLatLng, {
+          duration: 300,
+          keepAtCenter: true
+        });
+
        // mark.addTo(markerGroup);      
 
         //markerGroup.clearLayers();

@@ -20,7 +20,8 @@
     "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0",
     "filterxml": "^1.1.4",
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "leaflet.marker.slideto": "^0.2.0"
   },
   "engines": {
     "node": "10.x"
