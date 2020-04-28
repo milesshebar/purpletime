@@ -13,6 +13,8 @@ const app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
 
+var loc = '';
+
 function KATkml() {
   request(options, function(err, res, body) {
     if (err) throw err;
@@ -26,6 +28,7 @@ function KATkml() {
           var split = data.split(",");
 //          var x = split[0];
   //        var y = split[1];
+          loc = split;
           io.emit("shuttle", split);
         }      
       });
@@ -48,6 +51,12 @@ function KATkml() {
 }*/
 
 setInterval(KATkml, 10000);
+
+io.on('connect', onConnect);
+
+function onConnect(socket){
+  socket.emit("init", loc);
+};
 
 app.use(express.static("public"));
 
