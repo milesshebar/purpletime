@@ -33,7 +33,15 @@
       var markerGroup = L.layerGroup().addTo(map);
 
       socket.on("shuttle", data => {
-        console.log(data[0]);
+        console.log(data[0])
+        console.log(data[1])
+        var mark = L.marker(
+          L.latLng(
+            parseFloat(data[1]),
+            parseFloat(data[0])
+          )
+        );
+        mark.addTo(markerGroup);
       });
       
       
