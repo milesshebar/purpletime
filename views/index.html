@@ -16,7 +16,7 @@
       var bounds = new L.latLngBounds(new L.LatLng(40.414204, -82.508745), new L.LatLng(40.342613, -82.371132));
       const map = new L.Map("map", {
         center: new L.LatLng(40.3834, -82.4457),
-        zoom: 14,
+        zoom: 16,
    			maxBounds: bounds,
   			maxBoundsViscosity: 0.75
         
@@ -41,16 +41,14 @@
       var mark;
       
       socket.on("init", data => { 
-        console.log(data);
-        mark = L.marker(
-          L.latLng(
-            parseFloat(data[1]),
-            parseFloat(data[0])
-          )
-        );
+        var lat = parseFloat(data[1]);
+        var lng = parseFloat(data[0]);
+        var newLatLng = new L.LatLng(lat, lng);
+        mark = L.marker(newLatLng);
+        map.panTo(newLatLng);
         mark.addTo(markerGroup);
-        const bounds = mark.getBounds();
-        map.fitBounds(bounds);
+        //const bounds = mark.getBounds();
+        //map.fitBounds(bounds);
 
       });
 
@@ -59,12 +57,9 @@
         var lat = parseFloat(data[1]);
         var lng = parseFloat(data[0]);
         var newLatLng = new L.LatLng(lat, lng);
-        
-        mark.slideTo(	newLatLng, {
-          duration: 300,
-          keepAtCenter: true
-        });
-        mark.setLatLng (newLatLng);
+        mark.setLatLng(newLatLng);
+        map.panTo(newLatLng);
+
        // mark.addTo(markerGroup);      
 
         //markerGroup.clearLayers();
