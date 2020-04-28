@@ -8,7 +8,7 @@
     <script src="./L.KML.js"></script>
   </head>
   <body>
-    <div style="width: 100%; height: 50%" id="map"></div>
+    <div style="width: 100%; height: 100%" id="map"></div>
     <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
@@ -33,8 +33,7 @@
       var markerGroup = L.layerGroup().addTo(map);
 
       socket.on("shuttle", data => {
-        console.log(data[0])
-        console.log(data[1])
+        console.log(data);
         var mark = L.marker(
           L.latLng(
             parseFloat(data[1]),
@@ -46,7 +45,6 @@
       
       
       /*socket.on("kml", function() {
-        markerGroup.clearLayers();
         fetch("tmp.kml")
           .then(res => res.text())
           .then(kmltext => {
