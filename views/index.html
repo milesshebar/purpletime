@@ -48,7 +48,10 @@
             parseFloat(data[0])
           )
         );
-        mark.addTo(markerGroup);      
+        mark.addTo(markerGroup);
+        const bounds = mark.getBounds();
+        map.fitBounds(bounds);
+
       });
 
       
@@ -56,11 +59,12 @@
         var lat = parseFloat(data[1]);
         var lng = parseFloat(data[0]);
         var newLatLng = new L.LatLng(lat, lng);
+        
         mark.slideTo(	newLatLng, {
           duration: 300,
           keepAtCenter: true
         });
-
+        mark.setLatLng (newLatLng);
        // mark.addTo(markerGroup);      
 
         //markerGroup.clearLayers();
