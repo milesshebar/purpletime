@@ -26,8 +26,6 @@ function KATkml() {
         if (el.name == '124 (MTV-Gamb Evening)' ||  el.name == '143 (MTV-Gamb Day)') {
           var data = el.Point[0].coordinates[0];
           var split = data.split(",");
-//          var x = split[0];
-  //        var y = split[1];
           loc = split;
           io.emit("shuttle", split);
         }      
