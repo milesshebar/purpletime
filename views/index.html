@@ -32,20 +32,26 @@
       map.addLayer(osm);
       var markerGroup = L.layerGroup().addTo(map);
 
+      var mark;
       
-      socket.on("shuttle", data => {
-        markerGroup.clearLayers();
-        var lat = parseFloat(data[1]);
-        var lng = parseFloat(data[0]);
-        var newLatLng = new L.LatLng(lat, lng);
-        console.log(data);
-        var mark = L.marker(
+      socket.on("init", data => { 
+        mark = L.marker(
           L.latLng(
             parseFloat(data[1]),
             parseFloat(data[0])
           )
         );
-        mark.addTo(markerGroup);
+        mark.addTo(markerGroup);      
+      });
+
+      
+      socket.on("shuttle", data => {
+        var lat = parseFloat(data[1]);
+        var lng = parseFloat(data[0]);
+        var newLatLng = new L.LatLng(lat, lng);
+        mark.setLatLng(newLatLng); 
+        //markerGroup.clearLayers();
+        
       });
       
       
@@ -62,7 +68,7 @@
           });
       });*/
       
-      /*fetch('https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Froutes.kml?v=1588020030915')
+      fetch('https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Froutes.kml?v=1588020030915')
       .then( res => res.text() )
       .then( kmltext => {
 
@@ -74,7 +80,7 @@
 
             const track = new L.KML(kml)
             map.addLayer(track)
-      })*/
+      })
       
     </script>
   </body>
