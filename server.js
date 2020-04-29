@@ -28,11 +28,9 @@ function KATkml() {
       var jsoniem = JSON.stringify(result);
       var before = moment().isBefore(moment({ hour:14, minute: 0 }));
       var after = moment().isAfter(moment({ hour:14, minute: 0 }));
-
-      console.log(!before);
       
       result.kml.Document[0].Placemark.forEach(function (el) {
-       if (after) {
+       if (!after) {
         if ( el.name == '124 (MTV-Gamb Evening)') {
           var data = el.Point[0].coordinates[0];
           var split = data.split(",");
