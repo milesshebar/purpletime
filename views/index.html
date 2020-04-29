@@ -22,10 +22,24 @@
       width: 79%;
       height:100%;
     }
+      
+      @media (max-width: 900px) {
+        .left {
+          float: none;
+          width: 100%;
+          height:70%;
+        }
+        .right {
+          float: none;
+          width: 100%;
+          height: 30%;
+        }
+      }
     </style>
   
-    <iframe src="https://shebar.xyz/sched/" class="left" ></iframe>
           <div class="right" id="map"></div>
+        <iframe src="https://shebar.xyz/sched/" class="left" ></iframe>
+
 
   <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
