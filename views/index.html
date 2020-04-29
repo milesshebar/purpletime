@@ -8,11 +8,26 @@
     <script src="./L.KML.js"></script>
   </head>
   <body>
-    <div style="width: 50%; height: 100%" id="map"></div>
-    <iframe src="https://shebar.xyz/sched/">
-      
-    </iframe>
-    <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
+    <style>
+    .left{
+      display: inline-block;
+      float: left;
+      width: 50%;
+      height:100%;
+    }
+
+    .right{
+      display: inline-block;
+      float: right;
+      width: 50%;
+      height:100%;
+    }
+    </style>
+  
+    <iframe src="https://shebar.xyz/sched/" ></iframe>
+          <div style=" " id="map"></div>
+
+  <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
       var bounds = new L.latLngBounds(new L.LatLng(40.414204, -82.508745), new L.LatLng(40.342613, -82.371132));
