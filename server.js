@@ -3,7 +3,7 @@ const request = require("request");
 const fs = require("fs");
 var parseString = require("xml2js").parseString;
 var moment = require('moment-timezone');
-moment().tz("America/Los_Angeles").format();
+moment().tz("America/New_York").format();
 
 
 const options = {
