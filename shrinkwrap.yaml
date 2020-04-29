@@ -6,6 +6,7 @@ dependencies:
   jquery: 3.4.1
   leaflet.marker.slideto: 0.2.0
   moment: 2.24.0
+  moment-timezone: 0.5.28
   request: 2.88.2
   socket.io: 2.3.0
   socket.io-client: 2.3.0
@@ -2562,6 +2563,12 @@ packages:
     optional: true
     resolution:
       integrity: sha512-9DITV2YEMcw7XojdfvGl3gDD8J9QjZTJ7ZOUuSAkP+F3T6rDbzMJuPktxptsdHYEvZcmXrCD3LMOhdSAEq6zKA==
+  /moment-timezone/0.5.28:
+    dependencies:
+      moment: 2.24.0
+    dev: false
+    resolution:
+      integrity: sha512-TDJkZvAyKIVWg5EtVqRzU97w0Rb0YVbfpqyjgu6GwXCAohVRqwZjf4fOzDE6p1Ch98Sro/8hQQi65WDXW5STPw==
   /moment/2.24.0:
     dev: false
     resolution:
@@ -4164,6 +4171,7 @@ specifiers:
   jquery: ^3.4.1
   leaflet.marker.slideto: ^0.2.0
   moment: ^2.24.0
+  moment-timezone: ^0.5.27
   request: ^2.88.2
   socket.io: ^2.3.0
   socket.io-client: ^2.3.0

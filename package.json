@@ -22,7 +22,8 @@
     "filterxml": "^1.1.4",
     "moment": "^2.24.0",
     "leaflet.marker.slideto": "^0.2.0",
-    "firebase-tools": "^5.1.1"
+    "firebase-tools": "^5.1.1",
+    "moment-timezone": "^0.5.27"
   },
   "engines": {
     "node": "10.x"

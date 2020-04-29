@@ -2,9 +2,9 @@ const express = require("express");
 const request = require("request");
 const fs = require("fs");
 var parseString = require("xml2js").parseString;
+var moment = require('moment-timezone');
+moment().tz("America/New_York").format();
 
-var moment = require('moment');
-moment().format();
 
 
 const options = {
@@ -29,16 +29,18 @@ function KATkml() {
       var before = moment().isBefore(moment({ hour:14, minute: 0 }));
       var after = moment().isAfter(moment({ hour:14, minute: 0 }));
 
+      console.log(!before);
+      
       result.kml.Document[0].Placemark.forEach(function (el) {
-//       if (moment().isAfter(moment({ hour:14, minute: 0 }))) {
+       if (after) {
         if ( el.name == '124 (MTV-Gamb Evening)') {
           var data = el.Point[0].coordinates[0];
           var split = data.split(",");
           loc = split;
           console.log(split);
           io.emit("shuttle", split);
-            }       
-     //   }
+        }       
+   }
 
        else if ( el.name == '143 (MTV-Gamb Day)') {
           var data = el.Point[0].coordinates[0];
