@@ -6,10 +6,12 @@ var parseString = require("xml2js").parseString;
 var moment = require('moment');
 moment().format();
 
+
 const options = {
   method: "GET",
   uri: process.env.KAT_FEED
 };
+
 
 const app = express();
 var http = require("http").createServer(app);
@@ -25,8 +27,8 @@ function KATkml() {
     parseString(xml,function(err, result) {
       var jsoniem = JSON.stringify(result);
       result.kml.Document[0].Placemark.forEach(function (el) {
-        if (moment().isBefore(moment({ hour:14, minute: 0 }))) {
-            if ( el.name == '143 (MTV-Gamb Day)') {
+        if (moment().isAfter(moment({ hour:20, minute: 0 }))) {
+            if ( el.name == '124 (MTV-Gamb Evening)') {
               var data = el.Point[0].coordinates[0];
               var split = data.split(",");
               loc = split;
@@ -34,10 +36,11 @@ function KATkml() {
             }       
         }
 
-        else if ( el.name == '124 (MTV-Gamb Evening)') {
+        else if ( el.name == '143 (MTV-Gamb Day)') {
           var data = el.Point[0].coordinates[0];
           var split = data.split(",");
           loc = split;
+
           io.emit("shuttle", split);
         }      
       });
