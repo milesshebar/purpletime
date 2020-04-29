@@ -7,23 +7,22 @@
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.marker.slideto@0.2.0/Leaflet.Marker.SlideTo.js"></script>
     <script src="./L.KML.js"></script>
-    <script src="https://www.unpkg.com/leaflet-sidebar-v2@3.2.2/js/leaflet-sidebar.min.js"></script>
   </head>
   <body>
-    <div style="width: 100%; height: 50%" id="map"></div>
+    <div style="width: 100%; height: 100%" id="map"></div>
     <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
       var bounds = new L.latLngBounds(new L.LatLng(40.414204, -82.508745), new L.LatLng(40.342613, -82.371132));
       const map = new L.Map("map", {
         center: new L.LatLng(40.3834, -82.4457),
-        zoom: 15,
+        zoom: 16,
    			maxBounds: bounds,
   			maxBoundsViscosity: 0.75
+        
+
       });
      
-
-
     /*  map.dragging.disable();
       map.touchZoom.disable();
       map.doubleClickZoom.disable();
