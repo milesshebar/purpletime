@@ -4,12 +4,7 @@ const fs = require("fs");
 var parseString = require("xml2js").parseString;
 var moment = require("moment-timezone");
 
-//console.log("Currrent timezone: "); console.log(moment().tz());
-//console.log("Current time: "); console.log(moment().format());
-//console.log("Updating timezone: ");
 moment.tz.setDefault("America/New_York");
-//console.log("Current time: "); console.log(moment().format());
-//console.log("Currrent timezone after updating: "); console.log(moment().tz());
 
 const options = {
   method: "GET",
@@ -19,7 +14,6 @@ const options = {
 const app = express();
 var http = require("http").createServer(app);
 var io = require("socket.io")(http);
-
 var loc = "";
 
 function KATkml() {
@@ -54,19 +48,6 @@ function KATkml() {
     });
   });
 }
-
-/*function KATkml() {
-  request(options, function putTemp(err, res, body) {
-    if (err) throw err;
-    var kml = body;
-
-    
-    
-    fs.writeFile(__dirname + "/public/tmp.kml", kml, err => {
-      io.emit("kml", {});
-    });
-  });
-}*/
 
 setInterval(KATkml, 10000);
 
