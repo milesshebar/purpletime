@@ -22,12 +22,8 @@ function KATkml() {
     var xml = body;
 
     parseString(xml, function(err, result) {
-      var jsoniem = JSON.stringify(result);
       var divider = moment({ hour: 14, minute: 0 });
-
       var after = moment().isAfter(divider);
-
-      console.log("after " + after);
 
       result.kml.Document[0].Placemark.forEach(function(el) {
         if (after && el.name == "124 (MTV-Gamb Evening)") {
@@ -41,7 +37,6 @@ function KATkml() {
           var data = el.Point[0].coordinates[0];
           var split = data.split(",");
           loc = split;
-          console.log(moment());
           io.emit("shuttle", split);
         }
       });
