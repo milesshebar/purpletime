@@ -8,42 +8,40 @@
   </head>
   <body>
     <style>
-        hr {
+      hr {
         height: 1px;
         border: 0;
 
         border-top: 1px solid #BE00D4;
         padding: 0;
-    }
-      
-    .left{
-      display: inline-block;
-      float: left;
-      width: 30%;
-      height:90%;
-    }
-      
-      .text{
-      display: inline-block;
-      float: left;
-      width: 30%;
+      }
+
+      .left {
+        display: inline-block;
+        float: left;
+        width: 30%;
+        height: 90%;
+      }
+
+      .text {
+        display: inline-block;
+        float: left;
+        width: 30%;
         height: 5%;
-    }
+      }
 
-    .right{
-      display: inline-block;
-      float: right;
-      width: 69%;
-      height:100%;
-    }
-      
+      .right {
+        display: inline-block;
+        float: right;
+        width: 69%;
+        height: 100%;
+      }
 
-      
       @media (max-width: 950px) {
         .left {
           float: none;
           width: 100%;
-          height:60%;
+          height: 60%;
         }
         .right {
           float: none;
@@ -52,104 +50,60 @@
         }
       }
     </style>
- 
 
-          <h1 class="text" style="text-align: center; font-family: Helvetica, sans-serif; font-weight: 700; text-shadow: 1px 1px #BE00D4;">PurpleTime          <hr/>
-</h1>
+    <h1
+      class="text"
+      style="text-align: center;
+             font-family: Helvetica, sans-serif; font-weight: 700;
+             text-shadow: 1px 1px #BE00D4;"
+    >
+      PurpleTime
+      <hr />
+    </h1>
 
+    <div class="right" id="map"></div>
 
+    <iframe src="https://shebar.xyz/sched/" class="left"></iframe>
 
-    
-          <div class="right" id="map"></div>
-
-
-        <iframe src="https://shebar.xyz/sched/" class="left" ></iframe>
-
-
-  <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
+    <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
       var socket = io();
-      var bounds = new L.latLngBounds(new L.LatLng(40.414204, -82.508745), new L.LatLng(40.342613, -82.371132));
+      var bounds = new L.latLngBounds(
+        new L.LatLng(40.414204, -82.508745),
+        new L.LatLng(40.342613, -82.371132)
+      );
       const map = new L.Map("map", {
         center: new L.LatLng(40.3834, -82.4457),
         zoom: 15,
-   			maxBounds: bounds,
-  			maxBoundsViscosity: 0.75
-        
-
+        maxBounds: bounds,
+        maxBoundsViscosity: 0.75
       });
-     
-    /*  map.dragging.disable();
-      map.touchZoom.disable();
-      map.doubleClickZoom.disable();
-      map.scrollWheelZoom.disable();
-      map.boxZoom.disable();
-      map.keyboard.disable();
-      if (map.tap) map.tap.disable();*/
 
-      
       const osm = new L.TileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       );
-      map.addLayer(osm);
-      var markerGroup = L.layerGroup().addTo(map);
-
-      var mark;
       
-      socket.on("init", data => { 
+      map.addLayer(osm);
+      
+      var markerGroup = L.layerGroup().addTo(map);
+      var mark;
+
+      socket.on("init", data => {
         var lat = parseFloat(data[1]);
         var lng = parseFloat(data[0]);
         var newLatLng = new L.LatLng(lat, lng);
         mark = L.marker(newLatLng);
         map.panTo(newLatLng);
         mark.addTo(markerGroup);
-        //const bounds = mark.getBounds();
-        //map.fitBounds(bounds);
-
       });
 
-      
       socket.on("shuttle", data => {
         var lat = parseFloat(data[1]);
         var lng = parseFloat(data[0]);
         var newLatLng = new L.LatLng(lat, lng);
         mark.setLatLng(newLatLng);
         map.panTo(newLatLng);
-
-       // mark.addTo(markerGroup);      
-
-        //markerGroup.clearLayers();
-        
       });
-      
-      
-      /*socket.on("kml", function() {
-        fetch("tmp.kml")
-          .then(res => res.text())
-          .then(kmltext => {
-            const parser = new DOMParser();
-            const kml = parser.parseFromString(kmltext, "text/xml");
-            var track = new L.KML(kml);
-            track.addTo(markerGroup);
-            const bounds = track.getBounds();
-            map.fitBounds(bounds);
-          });
-      });*/
-      
-      /*fetch('https://cdn.glitch.com/5c7a6978-3917-4064-96bc-2e7fb415a796%2Froutes.kml?v=1588020030915')
-      .then( res => res.text() )
-      .then( kmltext => {
-
-            // Create new kml overlay
-            parser = new DOMParser();
-            kml = parser.parseFromString(kmltext,"text/xml");
-
-            console.log(kml)
-
-            const track = new L.KML(kml)
-            map.addLayer(track)
-      })*/
-      
     </script>
   </body>
 </html>
