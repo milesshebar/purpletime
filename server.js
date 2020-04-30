@@ -3,7 +3,7 @@ const request = require("request");
 const fs = require("fs");
 var parseString = require("xml2js").parseString;
 var moment = require('moment-timezone');
-moment().tz("America/New_York").format();
+moment().tz("America/Toronto").format();
 
 
 const options = {
@@ -25,11 +25,10 @@ function KATkml() {
 
     parseString(xml,function(err, result) {
       var jsoniem = JSON.stringify(result);
-      var before = moment().isBefore(moment({ hour:14, minute: 0 }));
-      var after = moment().isAfter(moment({ hour:14, minute: 0 }));
+      var divider =  moment({ hour:14, minute: 0 });
+      var after = moment().isAfter(divider);
       
-      console.log("before" + before);
-      console.log("after" + after);
+      console.log("after " + after);
       
       result.kml.Document[0].Placemark.forEach(function (el) {
        if (!after) {
