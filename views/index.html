@@ -5,21 +5,29 @@
       href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
     />
     <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
-    <script src="./L.KML.js"></script>
   </head>
   <body>
     <style>
+        hr {
+        height: 1px;
+        border: 0;
+
+        border-top: 1px solid #BE00D4;
+        padding: 0;
+    }
+      
     .left{
       display: inline-block;
       float: left;
       width: 30%;
-      height:70%;
+      height:90%;
     }
       
       .text{
       display: inline-block;
       float: left;
       width: 30%;
+        height: 5%;
     }
 
     .right{
@@ -35,7 +43,7 @@
         .left {
           float: none;
           width: 100%;
-          height:70%;
+          height:60%;
         }
         .right {
           float: none;
@@ -44,16 +52,7 @@
         }
       }
     </style>
-    
-    <style>
-    hr {
-        height: 1px;
-        border: 0;
-
-        border-top: 1px solid #BE00D4;
-        padding: 0;
-    }
-    </style>
+ 
 
           <h1 class="text" style="text-align: center; font-family: Helvetica, sans-serif; font-weight: 700; text-shadow: 1px 1px #BE00D4;">PurpleTime          <hr/>
 </h1>
@@ -73,7 +72,7 @@
       var bounds = new L.latLngBounds(new L.LatLng(40.414204, -82.508745), new L.LatLng(40.342613, -82.371132));
       const map = new L.Map("map", {
         center: new L.LatLng(40.3834, -82.4457),
-        zoom: 16,
+        zoom: 15,
    			maxBounds: bounds,
   			maxBoundsViscosity: 0.75
         
