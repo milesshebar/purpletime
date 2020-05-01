@@ -23,8 +23,6 @@ function KATkml() {
     parseString(xml, function(err, result) {
       var divider = moment({ hour: 14, minute: 0 });
       var after = moment().isAfter(divider);
-
-      console.log(after);
       
       result.kml.Document[0].Placemark.forEach(function(el) {
         if (after && el.name == "124 (MTV-Gamb Evening)") {
