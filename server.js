@@ -21,7 +21,7 @@ function KATkml() {
     var xml = body;
 
     parseString(xml, function(err, result) {
-      var divider = moment({ hour: 16, minute: 0 });
+      var divider = moment({ hour: 14, minute: 0 });
       var after = moment().isAfter(divider);
 
       console.log(after);
