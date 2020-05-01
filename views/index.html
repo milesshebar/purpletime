@@ -92,7 +92,7 @@
         var lat = parseFloat(data[1]);
         var lng = parseFloat(data[0]);
         var newLatLng = new L.LatLng(lat, lng);
-        mark = L.marker(newLatLng, {icon});
+        mark = L.marker(newLatLng);
         map.panTo(newLatLng);
         mark.addTo(markerGroup);
       });
