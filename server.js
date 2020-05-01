@@ -1,6 +1,5 @@
 const express = require("express");
 const request = require("request");
-const fs = require("fs");
 var parseString = require("xml2js").parseString;
 var moment = require("moment-timezone");
 
