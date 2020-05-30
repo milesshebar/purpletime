@@ -1,6 +1,6 @@
 <html>
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
@@ -22,6 +22,9 @@
         float: left;
         width: 30%;
         height: 90%;
+        font-family: "HelveticaNeue-Light", "Helvetica Neue Light",
+          "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight: 300;
       }
 
       .text {
@@ -30,7 +33,8 @@
         width: 30%;
         height: 5%;
         text-align: center;
-        font-family: Helvetica, sans-serif; font-weight: 700;
+        font-family: Helvetica, sans-serif;
+        font-weight: 700;
         text-shadow: 1px 1px #BE00D4;
       }
 
@@ -45,12 +49,12 @@
         .left {
           float: none;
           width: 100%;
-          height: 60%;
+          height: 25%;
         }
         .right {
           float: none;
           width: 100%;
-          height: 30%;
+          height: 60%;
         }
       }
     </style>
@@ -62,9 +66,26 @@
 
     <div class="right" id="map"></div>
 
-    <div class="left"><p>
-      test
-      </p></div>
+    <div class="left">
+      <p>
+        PurpleTime is a webapp that provides riders of
+        <a
+          href="https://www.co.knox.oh.us/index.php/county-offices/knox-area-transit"
+          target="_blank"
+           rel="noopener noreferrer"
+           >Knox Area Transit's</a
+        >
+        Purple Line with the realtime location of the shuttle, when it is running.
+        
+      </p>
+     <p>
+       It was originally created for my senior exercise in <a href="https://www.kenyon.edu/academics/departments-programs/scientific-computing/" target="_blank"
+           rel="noopener noreferrer">Scientific Computing</a> at Kenyon College in Gambier, OH.
+      </p>
+      <p>
+       It was originally created for my senior exercise in Scientific Computing at Kenyon College in Gambier, OH.
+      </p>
+    </div>
 
     <script src="https://unpkg.com/socket.io-client@2.3.0/dist/socket.io.js"></script>
     <script>
@@ -84,9 +105,9 @@
       const osm = new L.TileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
       );
-      
+
       map.addLayer(osm);
-      
+
       var markerGroup = L.layerGroup().addTo(map);
       var mark;
 
