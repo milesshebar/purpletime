@@ -2,7 +2,7 @@
 
 ![screenshot of PurpleTime running on desktop and phone](https://i.imgur.com/hMxoOZx.png)
 
-PurpleTime is a webapp that provides riders of Knox Area Transit's Purple Line with the realtime location of the shuttle, when it is running.
+PurpleTime is a real fine, refined, real time, redefined purple line timeline webapp that provides riders of Knox Area Transit's Purple Line with the realtime location of the shuttle, when it is running.
 
 It was originally created for my senior capstone in Scientific Computing at Kenyon College in Gambier, OH. It uses express, socket.io, leaflet, xml2js, and moment.js.
 
